@@ -17,14 +17,19 @@ Namespace WindowsApplication3
 		Inherits Form
 		Public Sub New()
 			InitializeComponent()
+			InitData()
+			gridView1.Columns(0).Group()
 		End Sub
-
-
-		Private Sub Form1_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
-			' TODO: This line of code loads data into the 'nwindDataSet.Employees' table. You can move, or remove it, as needed.
-			Me.employeesTableAdapter.Fill(Me.nwindDataSet.Employees)
+		Public Sub InitData()
+			Dim dt = New DataTable()
+			For i As Integer = 0 To 14
+				dt.Columns.Add("col" & i)
+			Next i
+			For i As Integer = 0 To 9
+				dt.Rows.Add(New Object() { i Mod 2 })
+			Next i
+			gridControl1.DataSource = dt
 		End Sub
-
 		Private Sub gridView1_CustomDrawGroupRow(ByVal sender As Object, ByVal e As DevExpress.XtraGrid.Views.Base.RowObjectCustomDrawEventArgs) Handles gridView1.CustomDrawGroupRow
 			Dim view As GridView = TryCast(sender, GridView)
 			Dim viewInfo As GridViewInfo = TryCast(view.GetViewInfo(), GridViewInfo)
@@ -35,14 +40,12 @@ Namespace WindowsApplication3
 			DrawGroupRow(e, viewInfo)
 			e.Handled = True
 		End Sub
-
 		Private Sub DrawGroupRow(ByVal e As DevExpress.XtraGrid.Views.Base.RowObjectCustomDrawEventArgs, ByVal viewInfo As GridViewInfo)
 			Dim rowInfo As GridGroupRowInfo = TryCast(e.Info, GridGroupRowInfo)
 			Dim painter As GridGroupRowPainter = TryCast(e.Painter, GridGroupRowPainter)
 			rowInfo.ButtonBounds = GetButtonRectangle(rowInfo.ButtonBounds, viewInfo)
 			painter.ElementsPainter.GroupRow.DrawObject(rowInfo)
 		End Sub
-
 		Private Function GetButtonRectangle(ByVal origRect As Rectangle, ByVal viewInfo As GridViewInfo) As Rectangle
 			Dim buttonRect As Rectangle = origRect
 			buttonRect.X = viewInfo.ClientBounds.X + viewInfo.ViewRects.IndicatorWidth + 5

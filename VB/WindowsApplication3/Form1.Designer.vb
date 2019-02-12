@@ -25,237 +25,51 @@ Namespace WindowsApplication3
 		''' the contents of this method with the code editor.
 		''' </summary>
 		Private Sub InitializeComponent()
-			Me.components = New System.ComponentModel.Container()
 			Me.gridControl1 = New DevExpress.XtraGrid.GridControl()
-			Me.employeesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.nwindDataSet = New WindowsApplication3.nwindDataSet()
 			Me.gridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
-			Me.colEmployeeID = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colLastName = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colFirstName = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colTitle = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colTitleOfCourtesy = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colBirthDate = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colHireDate = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colAddress = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colCity = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colRegion = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colPostalCode = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colCountry = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colHomePhone = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colExtension = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colPhoto = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colNotes = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colReportsTo = New DevExpress.XtraGrid.Columns.GridColumn()
-			Me.colPhotoPath = New DevExpress.XtraGrid.Columns.GridColumn()
 			Me.repositoryItemPictureEdit1 = New DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit()
-			Me.employeesTableAdapter = New WindowsApplication3.nwindDataSetTableAdapters.EmployeesTableAdapter()
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.employeesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.repositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.SuspendLayout()
 			' 
 			' gridControl1
 			' 
-			Me.gridControl1.DataSource = Me.employeesBindingSource
 			Me.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.gridControl1.EmbeddedNavigator.Margin = New System.Windows.Forms.Padding(2)
 			Me.gridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.gridControl1.LookAndFeel.SkinName = "Blue"
 			Me.gridControl1.LookAndFeel.UseDefaultLookAndFeel = False
 			Me.gridControl1.MainView = Me.gridView1
+			Me.gridControl1.Margin = New System.Windows.Forms.Padding(2)
 			Me.gridControl1.Name = "gridControl1"
 			Me.gridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() { Me.repositoryItemPictureEdit1})
-			Me.gridControl1.Size = New System.Drawing.Size(644, 576)
+			Me.gridControl1.Size = New System.Drawing.Size(483, 468)
 			Me.gridControl1.TabIndex = 0
 			Me.gridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.gridView1})
 			' 
-			' employeesBindingSource
-			' 
-			Me.employeesBindingSource.DataMember = "Employees"
-			Me.employeesBindingSource.DataSource = Me.nwindDataSet
-			' 
-			' nwindDataSet
-			' 
-			Me.nwindDataSet.DataSetName = "nwindDataSet"
-			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-			' 
 			' gridView1
 			' 
-			Me.gridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() { Me.colEmployeeID, Me.colLastName, Me.colFirstName, Me.colTitle, Me.colTitleOfCourtesy, Me.colBirthDate, Me.colHireDate, Me.colAddress, Me.colCity, Me.colRegion, Me.colPostalCode, Me.colCountry, Me.colHomePhone, Me.colExtension, Me.colPhoto, Me.colNotes, Me.colReportsTo, Me.colPhotoPath})
+			Me.gridView1.DetailHeight = 284
 			Me.gridView1.GridControl = Me.gridControl1
-			Me.gridView1.GroupCount = 1
 			Me.gridView1.Name = "gridView1"
 			Me.gridView1.OptionsView.ColumnAutoWidth = False
-			Me.gridView1.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() { New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colEmployeeID, DevExpress.Data.ColumnSortOrder.Ascending)})
 '			Me.gridView1.CustomDrawGroupRow += New DevExpress.XtraGrid.Views.Base.RowObjectCustomDrawEventHandler(Me.gridView1_CustomDrawGroupRow);
-			' 
-			' colEmployeeID
-			' 
-			Me.colEmployeeID.FieldName = "EmployeeID"
-			Me.colEmployeeID.Name = "colEmployeeID"
-			Me.colEmployeeID.OptionsColumn.ReadOnly = True
-			Me.colEmployeeID.Visible = True
-			Me.colEmployeeID.VisibleIndex = 0
-			Me.colEmployeeID.Width = 100
-			' 
-			' colLastName
-			' 
-			Me.colLastName.FieldName = "LastName"
-			Me.colLastName.Name = "colLastName"
-			Me.colLastName.Visible = True
-			Me.colLastName.VisibleIndex = 0
-			Me.colLastName.Width = 100
-			' 
-			' colFirstName
-			' 
-			Me.colFirstName.FieldName = "FirstName"
-			Me.colFirstName.Name = "colFirstName"
-			Me.colFirstName.Visible = True
-			Me.colFirstName.VisibleIndex = 1
-			Me.colFirstName.Width = 100
-			' 
-			' colTitle
-			' 
-			Me.colTitle.FieldName = "Title"
-			Me.colTitle.Name = "colTitle"
-			Me.colTitle.Visible = True
-			Me.colTitle.VisibleIndex = 2
-			Me.colTitle.Width = 100
-			' 
-			' colTitleOfCourtesy
-			' 
-			Me.colTitleOfCourtesy.FieldName = "TitleOfCourtesy"
-			Me.colTitleOfCourtesy.Name = "colTitleOfCourtesy"
-			Me.colTitleOfCourtesy.Visible = True
-			Me.colTitleOfCourtesy.VisibleIndex = 3
-			Me.colTitleOfCourtesy.Width = 100
-			' 
-			' colBirthDate
-			' 
-			Me.colBirthDate.FieldName = "BirthDate"
-			Me.colBirthDate.Name = "colBirthDate"
-			Me.colBirthDate.Visible = True
-			Me.colBirthDate.VisibleIndex = 4
-			Me.colBirthDate.Width = 100
-			' 
-			' colHireDate
-			' 
-			Me.colHireDate.FieldName = "HireDate"
-			Me.colHireDate.Name = "colHireDate"
-			Me.colHireDate.Visible = True
-			Me.colHireDate.VisibleIndex = 5
-			Me.colHireDate.Width = 100
-			' 
-			' colAddress
-			' 
-			Me.colAddress.FieldName = "Address"
-			Me.colAddress.Name = "colAddress"
-			Me.colAddress.Visible = True
-			Me.colAddress.VisibleIndex = 6
-			Me.colAddress.Width = 100
-			' 
-			' colCity
-			' 
-			Me.colCity.FieldName = "City"
-			Me.colCity.Name = "colCity"
-			Me.colCity.Visible = True
-			Me.colCity.VisibleIndex = 7
-			Me.colCity.Width = 100
-			' 
-			' colRegion
-			' 
-			Me.colRegion.FieldName = "Region"
-			Me.colRegion.Name = "colRegion"
-			Me.colRegion.Visible = True
-			Me.colRegion.VisibleIndex = 8
-			Me.colRegion.Width = 100
-			' 
-			' colPostalCode
-			' 
-			Me.colPostalCode.FieldName = "PostalCode"
-			Me.colPostalCode.Name = "colPostalCode"
-			Me.colPostalCode.Visible = True
-			Me.colPostalCode.VisibleIndex = 9
-			Me.colPostalCode.Width = 100
-			' 
-			' colCountry
-			' 
-			Me.colCountry.FieldName = "Country"
-			Me.colCountry.Name = "colCountry"
-			Me.colCountry.Visible = True
-			Me.colCountry.VisibleIndex = 10
-			Me.colCountry.Width = 100
-			' 
-			' colHomePhone
-			' 
-			Me.colHomePhone.FieldName = "HomePhone"
-			Me.colHomePhone.Name = "colHomePhone"
-			Me.colHomePhone.Visible = True
-			Me.colHomePhone.VisibleIndex = 11
-			Me.colHomePhone.Width = 100
-			' 
-			' colExtension
-			' 
-			Me.colExtension.FieldName = "Extension"
-			Me.colExtension.Name = "colExtension"
-			Me.colExtension.Visible = True
-			Me.colExtension.VisibleIndex = 12
-			Me.colExtension.Width = 100
-			' 
-			' colPhoto
-			' 
-			Me.colPhoto.FieldName = "Photo"
-			Me.colPhoto.Name = "colPhoto"
-			Me.colPhoto.Visible = True
-			Me.colPhoto.VisibleIndex = 13
-			Me.colPhoto.Width = 100
-			' 
-			' colNotes
-			' 
-			Me.colNotes.FieldName = "Notes"
-			Me.colNotes.Name = "colNotes"
-			Me.colNotes.Visible = True
-			Me.colNotes.VisibleIndex = 14
-			Me.colNotes.Width = 100
-			' 
-			' colReportsTo
-			' 
-			Me.colReportsTo.FieldName = "ReportsTo"
-			Me.colReportsTo.Name = "colReportsTo"
-			Me.colReportsTo.Visible = True
-			Me.colReportsTo.VisibleIndex = 15
-			Me.colReportsTo.Width = 100
-			' 
-			' colPhotoPath
-			' 
-			Me.colPhotoPath.FieldName = "PhotoPath"
-			Me.colPhotoPath.Name = "colPhotoPath"
-			Me.colPhotoPath.Visible = True
-			Me.colPhotoPath.VisibleIndex = 16
-			Me.colPhotoPath.Width = 100
 			' 
 			' repositoryItemPictureEdit1
 			' 
 			Me.repositoryItemPictureEdit1.Name = "repositoryItemPictureEdit1"
 			' 
-			' employeesTableAdapter
-			' 
-			Me.employeesTableAdapter.ClearBeforeFill = True
-			' 
 			' Form1
 			' 
-			Me.AutoScaleDimensions = New System.Drawing.SizeF(8F, 16F)
+			Me.AutoScaleDimensions = New System.Drawing.SizeF(6F, 13F)
 			Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-			Me.ClientSize = New System.Drawing.Size(644, 576)
+			Me.ClientSize = New System.Drawing.Size(483, 468)
 			Me.Controls.Add(Me.gridControl1)
+			Me.Margin = New System.Windows.Forms.Padding(2)
 			Me.Name = "Form1"
 			Me.Text = "Form1"
-'			Me.Load += New System.EventHandler(Me.Form1_Load);
 			CType(Me.gridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.employeesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.gridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.repositoryItemPictureEdit1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.ResumeLayout(False)
@@ -267,27 +81,6 @@ Namespace WindowsApplication3
 		Private gridControl1 As DevExpress.XtraGrid.GridControl
 		Private WithEvents gridView1 As DevExpress.XtraGrid.Views.Grid.GridView
 		Private repositoryItemPictureEdit1 As DevExpress.XtraEditors.Repository.RepositoryItemPictureEdit
-		Private colEmployeeID As DevExpress.XtraGrid.Columns.GridColumn
-		Private colLastName As DevExpress.XtraGrid.Columns.GridColumn
-		Private colFirstName As DevExpress.XtraGrid.Columns.GridColumn
-		Private colTitle As DevExpress.XtraGrid.Columns.GridColumn
-		Private colTitleOfCourtesy As DevExpress.XtraGrid.Columns.GridColumn
-		Private colBirthDate As DevExpress.XtraGrid.Columns.GridColumn
-		Private colHireDate As DevExpress.XtraGrid.Columns.GridColumn
-		Private colAddress As DevExpress.XtraGrid.Columns.GridColumn
-		Private colCity As DevExpress.XtraGrid.Columns.GridColumn
-		Private colRegion As DevExpress.XtraGrid.Columns.GridColumn
-		Private colPostalCode As DevExpress.XtraGrid.Columns.GridColumn
-		Private colCountry As DevExpress.XtraGrid.Columns.GridColumn
-		Private colHomePhone As DevExpress.XtraGrid.Columns.GridColumn
-		Private colExtension As DevExpress.XtraGrid.Columns.GridColumn
-		Private colPhoto As DevExpress.XtraGrid.Columns.GridColumn
-		Private colNotes As DevExpress.XtraGrid.Columns.GridColumn
-		Private colReportsTo As DevExpress.XtraGrid.Columns.GridColumn
-		Private colPhotoPath As DevExpress.XtraGrid.Columns.GridColumn
-		Private nwindDataSet As nwindDataSet
-		Private employeesBindingSource As System.Windows.Forms.BindingSource
-		Private employeesTableAdapter As WindowsApplication3.nwindDataSetTableAdapters.EmployeesTableAdapter
 	End Class
 End Namespace
 
